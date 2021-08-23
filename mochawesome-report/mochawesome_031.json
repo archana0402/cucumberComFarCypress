@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-08-19T14:23:21.101Z",
+    "end": "2021-08-19T14:23:39.735Z",
+    "duration": 18634,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fdaee6f2-13f2-46f2-a7a2-8aeb6f9dd3cf",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/Create_Project_Test.js",
+      "file": "cypress/integration/COMFAR4/Create_Project_Test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0985dab6-c584-4fbb-8896-9af0daaad637",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create Project",
+              "fullTitle": "Comfar First Test Suite Create Project",
+              "timedOut": null,
+              "duration": 18495,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('adminlogin').then(function (data) {\n  this.data = data;\n  cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\");\n  cy.login(this.data.username, this.data.password);\n}); // Create Project(12 and 13 LOC are common)\ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('Create Project').click().should('be.hidden');\ncreateProjectObj.projectTitleTextBox().type(\"TestProjectTitle4\");\ncreateProjectObj.projectDescriptionTextBox().type(\"12345\");\ncreateProjectObj.projectTypeSelect().select('Agricultural');\ncreateProjectObj.levelOfAnalysisSelect().select('Feasibility Study');\ncreateProjectObj.projectCreateButton().click(); //Project Identification\n//cy.get(':nth-child(1) > .MuiButtonBase-root').click({ force: true })\n//cy.get(':nth-child(1) > .MuiButtonBase-root').click()\nprojectIdentificationObj.projectClassficationNewProjectRadio().check({\n  force: true\n});\nprojectIdentificationObj.isCleanDevelopmentCheckBox().check({\n  force: true\n});\nprojectIdentificationObj.depthOfAnalysisEconomicCheckBox().check({\n  force: true\n});\nprojectIdentificationObj.specialFeaturesInflationCheckBox().check({\n  force: true\n}); //  projectIdentificationObj.projectStartDateCalendar().type('09-08-2021')\n//   projectIdentificationObj.saveDetailsButton().click()\n// PLANNING HORIZON\n//ADD PRODUCTS\nproductsobj.productClick().click();\nproductsobj.addProductButton().click();\nproductsobj.productNameTextBox().type('Product1');\nproductsobj.nominalCapacityTextBox().type('122333'); //  productsobj.actualStartDateOfProductionCalendar().type('2021-07-28')\n//  productsobj.actualEndDateOfProductionCalendar().type('2021-07-27')\nproductsobj.unitofMeasurementSelect().select('Centimetre'); //   productsobj.saveProductDetailsButton().click()\n//ADD Currencies",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value or text matching: `Agricultural`\n\nhttps://on.cypress.io/select",
+                "estack": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value or text matching: `Agricultural`\n\nhttps://on.cypress.io/select\n    at getOptions (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:139119:21)\n    at tryCatcher (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:13212:23)\n    at Function.Promise.attempt.Promise.try (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:10486:29)\n    at retryOptions (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:139157:27)\n    at tryCatcher (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:13212:23)\n    at Function.Promise.attempt.Promise.try (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:10486:29)\n    at tryFn (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:153198:21)\n    at whenStable (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:153236:12)\n    at http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:152728:16\n    at tryCatcher (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11329:18)\n    at Promise._fulfill (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11273:18)\n    at http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:12887:46\nFrom Your Spec Code:\n    at Context.eval (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\COMFAR4\\Create_Project_Test.js:124:42)",
+                "diff": null
+              },
+              "uuid": "8e287be7-eda2-46eb-ae42-6aca56e1ce86",
+              "parentUUID": "0985dab6-c584-4fbb-8896-9af0daaad637",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8e287be7-eda2-46eb-ae42-6aca56e1ce86"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18495,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

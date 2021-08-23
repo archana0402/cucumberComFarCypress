@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-08-19T14:05:38.575Z",
+    "end": "2021-08-19T14:05:58.807Z",
+    "duration": 20232,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "83518e17-145e-4a23-87db-b7c78bf00e90",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/feature/Positive Flow/Products.js",
+      "file": "cypress/integration/COMFAR4/feature/Positive Flow/Products.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0e38f2e5-1aee-4225-a6c3-5ca4f8b21fe0",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Products",
+              "fullTitle": "Comfar First Test Suite Add Products",
+              "timedOut": null,
+              "duration": 20030,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\"); //Login\ncy.get('input[placeholder=\"User Name\"]').type('unidoadmin');\ncy.get('input[type=\"password\"]').type('admin123');\ncy.get('.my-4').click();\ncy.wait(2000); // My Project        \ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('My Projects').click().should('be.hidden');\ncy.get('tr td:nth-child(2) > a.wrap-text').eq(0).click({\n  force: true\n});\ncy.get('#2Products').click();\ncy.get('#btnaddproduct').click();\ncy.get('#txtproductname').type('Product1');\ncy.get('#numnominalcapacity').type('122333');\ncy.wait(2000); //failing if we giving format as dd-mm-yyyy or giving /instead of hyphen -. \ncy.get('#dtstartdateproduction').type('2021-07-28');\ncy.get('#dtendofproduction').type('2021-07-27');\ncy.get('select').select('Centimetre'); //Add Custom Unit\ncy.get('#btnsetcustomunit').click();\ncy.get('#txtaddunit').type('testunit');\ncy.get('#btnaddunit').click();\ncy.get('#btnsubmitproductdetails').click();\ncy.log(\"Products Added Successfully\"); //EDIT PRODUCT\ncy.get(':nth-child(2) > :nth-child(7) > #btneditproduct').click();\ncy.get('#txteditproductname').type('editedtestunit');\ncy.get('select').select('dummy');\ncy.get('#dteditproductionstartdate').type('2021-08-02');\ncy.get('#dteditendofproduction').type('2021-08-05');\ncy.get('#numeditnominalcapacity').type('987');\ncy.get('#btnupdateproduct').click();\ncy.log(\"Products Updated Successfully\"); //DELETE PRODUCT\ncy.get(':nth-child(2) > :nth-child(7) > #btndeleteproduct').click();\ncy.get('.btn-secondary').click();\ncy.get(':nth-child(2) > :nth-child(7) > #btndeleteproduct').click();\ncy.get('.modal-footer > .btn-primary').click();\ncy.log(\"Products Deleted Successfully\"); //.btn-secondary",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(2) > :nth-child(7) > #btneditproduct`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(2) > :nth-child(7) > #btneditproduct`, but never found it.\n    at Context.eval (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\COMFAR4\\feature\\Positive%20Flow\\Products.js:131:8)",
+                "diff": null
+              },
+              "uuid": "7fe42a64-981b-450e-b88e-727c19da95e3",
+              "parentUUID": "0e38f2e5-1aee-4225-a6c3-5ca4f8b21fe0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7fe42a64-981b-450e-b88e-727c19da95e3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20030,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

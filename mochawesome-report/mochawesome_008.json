@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-11T12:37:21.067Z",
+    "end": "2021-08-11T12:37:42.233Z",
+    "duration": 21166,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f7fbecee-8794-474b-b5f3-9949d1c94818",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/feature/Positive Flow/Products.js",
+      "file": "cypress/integration/COMFAR4/feature/Positive Flow/Products.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0ecf341d-4d11-45ca-ab78-def7fb5c9229",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Products",
+              "fullTitle": "Comfar First Test Suite Add Products",
+              "timedOut": null,
+              "duration": 17662,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\"); //Login\ncy.get('input[placeholder=\"User Name\"]').type('unidoadmin');\ncy.get('input[type=\"password\"]').type('admin123');\ncy.get('.my-4').click();\ncy.wait(2000); // My Project        \ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('My Projects').click().should('be.hidden');\ncy.get('tr td:nth-child(2) > a.wrap-text').eq(0).click({\n  force: true\n});\ncy.get('#2Products').click();\ncy.get('#btnaddproduct').click();\ncy.get('#txtproductname').type('Product1');\ncy.get('#numnominalcapacity').type('122333');\ncy.wait(2000); //failing if we giving format as dd-mm-yyyy or giving /instead of hyphen -. \ncy.get('#dtstartdateproduction').type('2021-07-28');\ncy.get('#dtendofproduction').type('2021-07-27');\ncy.get('select').select('Centimetre'); //Add Custom Unit\ncy.get('#btnsetcustomunit').click();\ncy.get('#txtaddunit').type('testunit');\ncy.get('#btnaddunit').click();\ncy.get('#btnsubmitproductdetails').click();\ncy.log(\"Products Added Successfully\"); //EDIT PRODUCT\ncy.get(':nth-child(2) > :nth-child(7) > #btneditproduct').click();\ncy.get('#txteditproductname').type('editedtestunit');\ncy.get('select').select('dummy');\ncy.get('#dteditproductionstartdate').type('2021-08-02');\ncy.get('#dteditendofproduction').type('2021-08-05');\ncy.get('#numeditnominalcapacity').type('987');\ncy.get('#btnupdateproduct').click();\ncy.log(\"Products Updated Successfully\"); //DELETE PRODUCT\ncy.get(':nth-child(2) > :nth-child(7) > #btndeleteproduct').click();\ncy.get('.btn-secondary').click();\ncy.get(':nth-child(2) > :nth-child(7) > #btndeleteproduct').click();\ncy.get('.modal-footer > .btn-primary').click();\ncy.log(\"Products Deleted Successfully\"); //.btn-secondary",
+              "err": {},
+              "uuid": "bc6155cc-0720-479b-91df-e802e3033242",
+              "parentUUID": "0ecf341d-4d11-45ca-ab78-def7fb5c9229",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bc6155cc-0720-479b-91df-e802e3033242"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17662,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

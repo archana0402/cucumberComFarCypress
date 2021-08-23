@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-19T14:05:22.566Z",
+    "end": "2021-08-19T14:05:29.029Z",
+    "duration": 6463,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a956c205-3eee-4476-b7b0-49dfe2acf17f",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/feature/Positive Flow/Login.js",
+      "file": "cypress/integration/COMFAR4/feature/Positive Flow/Login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9e47bc81-c94b-4d8b-8d2f-36898294a912",
+          "title": "Login Comfar 4 Application (Smoke)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login Test Case",
+              "fullTitle": "Login Comfar 4 Application (Smoke) Login Test Case",
+              "timedOut": null,
+              "duration": 6292,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\");\ncy.login(this.data.username, this.data.password);",
+              "err": {},
+              "uuid": "7f050744-6e0d-4ada-a339-59131ea8536e",
+              "parentUUID": "9e47bc81-c94b-4d8b-8d2f-36898294a912",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7f050744-6e0d-4ada-a339-59131ea8536e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6292,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

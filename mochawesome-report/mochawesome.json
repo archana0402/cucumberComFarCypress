@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-11T12:34:15.347Z",
+    "end": "2021-08-11T12:34:28.614Z",
+    "duration": 13267,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6d28d895-2bda-42f5-bb2b-1fcc9dea0e31",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/Add_Project_Identification.js",
+      "file": "cypress/integration/COMFAR4/Add_Project_Identification.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "923c0836-4c8e-40d6-b0c7-28a94707c5a2",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Project Identification",
+              "fullTitle": "Comfar First Test Suite Project Identification",
+              "timedOut": null,
+              "duration": 8958,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\"); //Login\ncy.get('input[placeholder=\"User Name\"]').type('unidoadmin');\ncy.get('input[type=\"password\"]').type('admin123');\ncy.get('.my-4').click();\ncy.wait(2000); // My Project\ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('My Projects').click().should('be.hidden');\ncy.get('tr td:nth-child(2) > a.wrap-text').eq(0).click();\ncy.get('#customRadio1').check({\n  force: true\n});\ncy.get('#customCheck6').check({\n  force: true\n});\ncy.get('#customCheck9').check({\n  force: true\n});\ncy.get('input[type=\"Date\"]').type('2021-08-09', {\n  force: true\n});\ncy.contains('Special Features').click();\ncy.get('#customCheck3').check({\n  force: true\n});\ncy.get('#customCheck2').check({\n  force: true\n});\ncy.contains('Save Details').click();",
+              "err": {},
+              "uuid": "1bdd901b-fbf4-4a0b-b1e0-a51409e6d234",
+              "parentUUID": "923c0836-4c8e-40d6-b0c7-28a94707c5a2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1bdd901b-fbf4-4a0b-b1e0-a51409e6d234"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8958,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

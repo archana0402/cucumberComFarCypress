@@ -1,0 +1,40 @@
+{
+  "name": "cypress-automation-suite",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cypress": "^8.2.0",
+    "cypress-file-upload": "^4.1.1",
+    "cypress-iframe": "^1.0.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "cypress-wait-until": "^1.7.1",
+    "dayjs": "^1.10.4",
+    "faker": "^4.1.0",
+    "mocha": "^8.1.3",
+    "mocha-junit-reporter-2": "^2.0.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+  "scripts": {
+    "delete:results": "if exist  \".\\cypress\\results\" rmdir .\\cypress\\results /q /s",
+    "delete:coverageReports": "if exist  \".\\coverage\" rmdir .\\coverage /q /s",
+    "pretestE2E": "npm run delete:results && npm run delete:coverageReports ",
+    "testE2E": "npx cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "openCypress": "npx cypress open",
+    "mergereport": "junit-merge -d ./cypress/results -o ./cypress/results/merged.xml",
+    "createHTMLReport": "xunit-viewer -r ./cypress/results/merged.xml -o ./cypress/results/merged.html",
+    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "test:cli": "npm run delete:reportFolder && cypress run",
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
+    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
+  },
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^4.2.0",
+    "cypress-select-tests": "^1.7.1",
+    "cypress-xpath": "^1.6.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+    }
+}

@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-08-19T14:03:52.178Z",
+    "end": "2021-08-19T14:04:11.146Z",
+    "duration": 18968,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "590cae16-aada-49a0-ae25-03c40168cc95",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/feature/Negative Flow/Duplicate_Products_Custom_Unit.js",
+      "file": "cypress/integration/COMFAR4/feature/Negative Flow/Duplicate_Products_Custom_Unit.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "39ba3a5d-18be-404f-9889-36c1091fb10d",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Products",
+              "fullTitle": "Comfar First Test Suite Add Products",
+              "timedOut": null,
+              "duration": 18676,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('adminlogin').then(function (data) {\n  this.data = data;\n  cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\");\n  cy.login(this.data.username, this.data.password);\n}); // My Project        \ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('My Projects').click().should('be.hidden');\ncy.get('tr td:nth-child(2) > a.wrap-text').eq(0).click();\ncy.get('#2Products').click();\ncy.get('#btnaddproduct').click();\ncy.get('#txtproductname').type('Product1');\ncy.get('#numnominalcapacity').type('145214sdff4');\ncy.wait(2000); //failing if we giving format as dd-mm-yyyy or giving /instead of hyphen -. \ncy.get('#dtstartdateproduction').type('2021-08-26');\ncy.get('#dtendofproduction').type('2021-08-24').should('not.have.text', '2021-08-24');\ncy.get('select').select('Centimetre');\ncy.get('#btnsubmitproductdetails').click(); //Add Custom Unit\ncy.get('#btnsetcustomunit').click();\ncy.get('#txtaddunit').type('testunit');\ncy.get('#btnaddunit').click();\ncy.get('Toastify__toast-body').should('have.text', 'Unit Name Already Exists.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `Toastify__toast-body`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `Toastify__toast-body`, but never found it.\n    at Context.eval (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\COMFAR4\\feature\\Negative%20Flow\\Duplicate_Products_Custom_Unit.js:126:36)",
+                "diff": null
+              },
+              "uuid": "9366cc8f-50dc-4e7c-bb0b-ca1c19d327b4",
+              "parentUUID": "39ba3a5d-18be-404f-9889-36c1091fb10d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9366cc8f-50dc-4e7c-bb0b-ca1c19d327b4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18676,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

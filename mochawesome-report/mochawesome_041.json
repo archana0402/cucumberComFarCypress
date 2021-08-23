@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-08-19T19:46:08.036Z",
+    "end": "2021-08-19T19:46:22.183Z",
+    "duration": 14147,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea4e5242-030a-4eb0-a171-2844673c5e18",
+      "title": "",
+      "fullFile": "cypress/integration/cucumber-test/login.feature",
+      "file": "cypress/integration/cucumber-test/login.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9dbfed78-ccce-4d98-9206-a3dbc64807fb",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to Orange CRM Website (example #1)",
+              "fullTitle": "Login Login to Orange CRM Website (example #1)",
+              "timedOut": null,
+              "duration": 13933,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "ReferenceError: clearcy is not defined",
+                "estack": "ReferenceError: clearcy is not defined\n    at Context.eval (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\cucumber-test\\login.feature:54:3)\n    at Context.resolveAndRunStepDefinition (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\cucumber-test\\login.feature:12347:9)\n    at Context.eval (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\cucumber-test\\login.feature:11665:35)",
+                "diff": null
+              },
+              "uuid": "bc8bfd06-67c0-4acc-918b-b7a048dc1ef8",
+              "parentUUID": "9dbfed78-ccce-4d98-9206-a3dbc64807fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bc8bfd06-67c0-4acc-918b-b7a048dc1ef8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13933,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

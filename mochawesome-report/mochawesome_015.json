@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-19T14:02:28.932Z",
+    "end": "2021-08-19T14:02:42.975Z",
+    "duration": 14043,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8aa54dc9-99e2-4f05-bb40-f4d91cae83ca",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/Create_Project_Test.js",
+      "file": "cypress/integration/COMFAR4/Create_Project_Test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "622e6025-cbf0-44be-9d4c-a8c0827b6650",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create Project",
+              "fullTitle": "Comfar First Test Suite Create Project",
+              "timedOut": null,
+              "duration": 13885,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('adminlogin').then(function (data) {\n  this.data = data;\n  cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\");\n  cy.login(this.data.username, this.data.password);\n}); // Create Project(12 and 13 LOC are common)\ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('Create Project').click().should('be.hidden');\ncreateProjectObj.projectTitleTextBox().type(\"TestProjectTitle4\");\ncreateProjectObj.projectDescriptionTextBox().type(\"12345\");\ncreateProjectObj.projectTypeSelect().select('Agricultural');\ncreateProjectObj.levelOfAnalysisSelect().select('Feasibility Study');\ncreateProjectObj.projectCreateButton().click(); //Project Identification\n//cy.get(':nth-child(1) > .MuiButtonBase-root').click({ force: true })\n//cy.get(':nth-child(1) > .MuiButtonBase-root').click()\nprojectIdentificationObj.projectClassficationNewProjectRadio().check({\n  force: true\n});\nprojectIdentificationObj.isCleanDevelopmentCheckBox().check({\n  force: true\n});\nprojectIdentificationObj.depthOfAnalysisEconomicCheckBox().check({\n  force: true\n});\nprojectIdentificationObj.specialFeaturesInflationCheckBox().check({\n  force: true\n}); //  projectIdentificationObj.projectStartDateCalendar().type('09-08-2021')\n//   projectIdentificationObj.saveDetailsButton().click()\n// PLANNING HORIZON\n//ADD PRODUCTS\nproductsobj.productClick().click();\nproductsobj.addProductButton().click();\nproductsobj.productNameTextBox().type('Product1');\nproductsobj.nominalCapacityTextBox().type('122333'); //  productsobj.actualStartDateOfProductionCalendar().type('2021-07-28')\n//  productsobj.actualEndDateOfProductionCalendar().type('2021-07-27')\nproductsobj.unitofMeasurementSelect().select('Centimetre'); //   productsobj.saveProductDetailsButton().click()\n//ADD Currencies",
+              "err": {},
+              "uuid": "19a4a464-4381-4c4a-8129-09803a32c29f",
+              "parentUUID": "622e6025-cbf0-44be-9d4c-a8c0827b6650",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "19a4a464-4381-4c4a-8129-09803a32c29f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13885,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

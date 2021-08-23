@@ -1,0 +1,16 @@
+{
+  "video": true,
+  "screenshotsFolder": "screenshots/",
+  "baseUrl" : "http://vm-dev1.westeurope.cloudapp.azure.com:8001/",
+  "testFiles": "**/*.{feature,features}",   
+  "projectId": "uzx762",
+  "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+    "reporterOptions": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+    }
+    
+        
+
+}

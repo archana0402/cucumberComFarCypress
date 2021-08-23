@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-08-19T14:06:10.600Z",
+    "end": "2021-08-19T14:06:38.750Z",
+    "duration": 28150,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f6cd6f12-d2f3-4e19-944c-bcd909ee6f42",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/feature/Positive Flow/Project_feature.js",
+      "file": "cypress/integration/COMFAR4/feature/Positive Flow/Project_feature.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "869f8b4d-229d-4c06-bae8-b79a29c9312f",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create Project",
+              "fullTitle": "Comfar First Test Suite Create Project",
+              "timedOut": null,
+              "duration": 27527,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\"); //Login\ncy.get('input[placeholder=\"User Name\"]').type('unidoadmin');\ncy.get('input[type=\"password\"]').type('admin123');\ncy.get('.my-4').click();\ncy.wait(4000); // Create Project\ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('Create Project').click().should('be.hidden');\ncy.get('input[placeholder=\"Project Title\"]').type('ProjectTest56');\ncy.get('form > :nth-child(2) > .form-control').type('Project Description');\ncy.get('select').eq(0).select('Agricultural');\ncy.get('select').eq(1).select('Feasibility Study').should('have.value', '2');\ncy.get('form > .text-center > :nth-child(1)').click();\ncy.get(':nth-child(1) > .MuiButtonBase-root').click({\n  force: true\n}); //Project Identification\ncy.get(':nth-child(1) > .MuiButtonBase-root').click();\ncy.get('#customRadio1').check({\n  force: true\n});\ncy.get('#customCheck6').check({\n  force: true\n});\ncy.get('input[name=\"isEconomicCheckBox\"]').check({\n  force: true\n});\ncy.get('input[type=\"date\"]').type('2021-08-09', {\n  force: true\n});\ncy.contains('Special Features').click({\n  force: true\n});\ncy.get('#customCheck3').check({\n  force: true\n});\ncy.get('#customCheck2').check({\n  force: true\n});\ncy.contains('Save Details').click({\n  force: true\n}); // PLANNING HORIZON\n//ADD PRODUCTS\ncy.get(':nth-child(5) > .MuiButtonBase-root').click();\ncy.get('#btnaddproduct').click();\ncy.get('#txtproductname').type('Product1');\ncy.get('#numnominalcapacity').type('122333');\ncy.get('#dtstartdateproduction').type('2021-07-28');\ncy.get('#dtendofproduction').type('2021-07-27');\ncy.get('select').select('Centimetre');\ncy.get('#btnsubmitproductdetails').click(); // ADD Currency\ncy.get('#3Currencies').click();\ncy.get('#btnaddcurrency').click(); // Add Local Currency\ncy.get('select').eq(1).select('Hong Kong dollar'); //cy.get('select').eq(0).select('1')\ncy.get('#btnsubmitcurrency').click(); // Add Foreign Currency\ncy.get('#btnaddcurrency').click();\ncy.get('select').eq(1).select('Indian rupee');\ncy.get('#numexchangeforeignrate').type('7');\ncy.get('#numexchangelocalrate').type('1');\ncy.get('#btnsubmitcurrency').click(); //DELETE PROJECT\ncy.get('.breadcrumb > :nth-child(2) > a').click();\ncy.get(':nth-child(1) > :nth-child(8) > div > :nth-child(2)').click();\ncy.get('.btn-info').click();\ncy.log('Project Deleted Successfully');",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<a href=\"#/admin/Projects\">Projects</a>`\n\nis being covered by another element:\n\n`<div class=\"MuiBackdrop-root jss1\" aria-hidden=\"true\" style=\"opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<a href=\"#/admin/Projects\">Projects</a>`\n\nis being covered by another element:\n\n`<div class=\"MuiBackdrop-root jss1\" aria-hidden=\"true\" style=\"opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:148556:26)\n    at ensureDescendents (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:135786:8)\n    at ensureDescendentsAndScroll (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:135793:14)\n    at ensureElIsNotCovered (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:135927:5)\n    at runAllChecks (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:136114:52)\n    at retryActionability (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:136137:16)\n    at tryCatcher (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:13212:23)\n    at Function.Promise.attempt.Promise.try (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:10486:29)\n    at tryFn (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:153198:21)\n    at whenStable (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:153236:12)\n    at http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:152728:16\n    at tryCatcher (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/runner/cypress_runner.js:11329:18)\nFrom Your Spec Code:\n    at Context.eval (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\COMFAR4\\feature\\Positive%20Flow\\Project_feature.js:170:47)",
+                "diff": null
+              },
+              "uuid": "594c2d12-749e-403a-927e-8374571cbe5a",
+              "parentUUID": "869f8b4d-229d-4c06-bae8-b79a29c9312f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "594c2d12-749e-403a-927e-8374571cbe5a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27527,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-08-11T12:34:38.305Z",
+    "end": "2021-08-11T12:34:55.898Z",
+    "duration": 17593,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8c059085-9d9d-4bf2-a8b0-14ab476a6f4c",
+      "title": "",
+      "fullFile": "cypress/integration/COMFAR4/Create_Projects.js",
+      "file": "cypress/integration/COMFAR4/Create_Projects.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "871b2482-bb1f-46a4-b77f-0f195c62a54b",
+          "title": "Comfar First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create Project",
+              "fullTitle": "Comfar First Test Suite Create Project",
+              "timedOut": null,
+              "duration": 14040,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://vm-dev1.westeurope.cloudapp.azure.com:8001/#/\"); //Login\ncy.get('input[placeholder=\"User Name\"]').type('unidoadmin');\ncy.get('input[type=\"password\"]').type('admin123');\ncy.get('.my-4').click();\ncy.wait(3000); // Create Project\ncy.get('.pr-3 > .sidenav-toggler-inner > :nth-child(1)').click();\ncy.get('.active.nav-link').click();\ncy.contains('Create Project').click().should('be.hidden');\ncy.get('input[placeholder=\"Project Title\"]').type('Project894');\ncy.get('form > :nth-child(2) > .form-control').type('Project Description');\ncy.get('select').eq(0).select('Agricultural');\ncy.get('select').eq(1).select('Feasibility Study').should('have.value', '2');\ncy.get('form > .text-center > :nth-child(1)').click();\ncy.get(':nth-child(1) > .MuiButtonBase-root').click({\n  force: true\n}); //Project Identification\ncy.get(':nth-child(1) > .MuiButtonBase-root').click();\ncy.get('#customRadio1').check({\n  force: true\n});\ncy.get('#customCheck6').check({\n  force: true\n});\ncy.get('input[name=\"isEconomicCheckBox\"]').check({\n  force: true\n});\ncy.get('input[type=\"date\"]').type('2021-08-09', {\n  force: true\n});\ncy.contains('Special Features').click({\n  force: true\n});\ncy.get('#customCheck3').check({\n  force: true\n});\ncy.get('#customCheck2').check({\n  force: true\n});\ncy.contains('Save Details').click({\n  force: true\n}); // PLANNING HORIZON\n//ADD PRODUCTS\ncy.get(':nth-child(5) > .MuiButtonBase-root').click();\ncy.get('#btnaddproduct').click();\ncy.get('#txtproductname').type('Product1');\ncy.get('#numnominalcapacity').type('122333');\ncy.get('#dtstartdateproduction').type('2021-07-28');\ncy.get('#dtendofproduction').type('2021-07-27');\ncy.get('select').select('Centimetre');\ncy.get('#btnsubmitproductdetails').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .MuiButtonBase-root`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .MuiButtonBase-root`, but never found it.\n    at Context.eval (http://vm-dev1.westeurope.cloudapp.azure.com:8001/__cypress/tests?p=cypress\\integration\\COMFAR4\\Create_Projects.js:117:8)",
+                "diff": null
+              },
+              "uuid": "31254614-b273-43d6-85c3-111e72c93ab3",
+              "parentUUID": "871b2482-bb1f-46a4-b77f-0f195c62a54b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "31254614-b273-43d6-85c3-111e72c93ab3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14040,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": true,
+        "json": false
+      },
+      "version": "5.2.0"
+    }
+  }
+}
